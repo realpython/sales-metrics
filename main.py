@@ -8,7 +8,7 @@ def get_data(name):
     with open(name) as f:
         reader = csv.reader(f)
         results = dict()
-        results['n/a'] = 0;
+        results['n/a'] = 0
         for row in reader:
             if not(len(row)):
                 results['n/a'] += 1
@@ -20,6 +20,7 @@ def get_data(name):
                     results[country_code] = 1
         return results
 
+
 def convert_to_list(data):
     country_list = list()
     for country_code in data:
@@ -28,6 +29,7 @@ def convert_to_list(data):
             'count': data[country_code]
         })
     return country_list
+
 
 def get_country(countries):
     base = 'https://restcountries.eu/rest/v1/alpha/'
@@ -43,12 +45,14 @@ def get_country(countries):
         count += 1
     return countries
 
+
 def create_file(file_name, data):
     with open(file_name, 'w') as f:
         for obj in data:
             w = csv.writer(f)
             w.writerow(obj.values())
     return True
+
 
 if __name__ == '__main__':
     input_file = 'country.csv'
@@ -62,9 +66,3 @@ if __name__ == '__main__':
     print('write to csv...')
     create_file(output_fule, all_data)
     print('done!')
-
-
-
-
-# with open('result.json', 'w') as fp:
-#     json.dump(sample, fp)
