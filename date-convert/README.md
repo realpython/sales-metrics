@@ -10,9 +10,11 @@ Input a CSV of dates:
 
 Output:
 
-```csv
-2013,05,1
-2016,12,2
+```python
+{
+  '2013': [{05: 1}]
+  '2016': [{12: 2}]
+}
 ```
 
 ## Getting Started

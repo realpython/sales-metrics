@@ -6,10 +6,6 @@ ALL_YEARS = [
     '06', '05', '04', '03', '02', '01'
 ]
 
-# {
-#   2014: [{01: 2}]
-# }
-
 def get_data(name):
     years = dict()
     with open(name) as f:
@@ -33,7 +29,6 @@ def get_counts(data):
 
 if __name__ == '__main__':
     input_file = 'dates.csv'
-    output_fule = 'data.csv'
     print('get data...')
     array = get_data(input_file)
     print('count months...')
