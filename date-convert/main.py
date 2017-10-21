@@ -14,7 +14,10 @@ def get_data(name):
             new_row = row[0].split('-')
             if new_row[0] not in years:
                 years[new_row[0]] = list()
-            years[new_row[0]].append(new_row[1])
+            try:
+                years[new_row[0]].append(new_row[1])
+            except Exception as e:
+                print(e)
     return years
 
 
